@@ -136,10 +136,10 @@ function initGame() {
   // Ordre de jeu souhaité : Matias, Noam, Maxence, Léni, Julian, Utilisateur
   // Nous réorganisons donc le tableau en conséquence.
   players = [
-    { id: "bot1", pseudo: "Noam", type: "bot", balance: cityLevels[currentCityIndex].buyIn, cards: [], folded: false },
-    { id: "bot4", pseudo: "Maxence", type: "bot", balance: cityLevels[currentCityIndex].buyIn, cards: [], folded: false },
-    { id: "bot3", pseudo: "Matias", type: "bot", balance: cityLevels[currentCityIndex].buyIn, cards: [], folded: false },
-    { id: "bot2", pseudo: "Léni", type: "bot", balance: cityLevels[currentCityIndex].buyIn, cards: [], folded: false },
+    { id: "bot1", pseudo: "Matias", type: "bot", balance: cityLevels[currentCityIndex].buyIn, cards: [], folded: false },
+    { id: "bot2", pseudo: "Noam", type: "bot", balance: cityLevels[currentCityIndex].buyIn, cards: [], folded: false },
+    { id: "bot3", pseudo: "Maxence", type: "bot", balance: cityLevels[currentCityIndex].buyIn, cards: [], folded: false },
+    { id: "bot4", pseudo: "Léni", type: "bot", balance: cityLevels[currentCityIndex].buyIn, cards: [], folded: false },
     { id: "bot5", pseudo: "Julian", type: "bot", balance: cityLevels[currentCityIndex].buyIn, cards: [], folded: false },
     { id: "user", pseudo: userPseudo, type: "human", balance: cityLevels[currentCityIndex].buyIn, cards: [], folded: false }
   ];
