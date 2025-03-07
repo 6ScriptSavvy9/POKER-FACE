@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poker Texas Hold'em</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Écran d'accueil -->
+  <div id="start-screen">
+    <h1>Poker Tournament</h1>
+    <button onclick="goToCitySelection()">Jouer</button>
+  </div>
+
+  <!-- Écran de sélection de ville -->
+  <div id="city-selection" style="display:none; text-align:center;">
+    <h2>Choisissez votre ville</h2>
+    <select id="city-select">
+      <option value="0" data-buyin="1000">Deauville</option>
+      <option value="1" data-buyin="5000">Monte Carlo</option>
+      <option value="2" data-buyin="10000">Las Vegas</option>
+    </select>
+    <br>
+    <button onclick="goToLogin()">Valider</button>
+  </div>
+
+  <!-- Zone de login -->
+  <div id="login" style="display:none; text-align:center;">
+    <h2>Bienvenue !</h2>
+    <p>Entrez votre pseudonyme :</p>
+    <input type="text" id="username" placeholder="Votre pseudonyme">
+    <button onclick="initGame()">Valider</button>
+  </div>
+
+  <!-- Zone de jeu -->
+  <div id="game-container" style="display:none;">
+    <!-- La table avec décor personnalisé -->
+    <div id="table">
+      <div id="pot-display">Pot : 0</div>
+      <div id="community-cards"></div>
+    </div>
+
+    <!-- Joueurs autour de la table (positions restent inchangées) -->
+    <div class="player" id="bot1">
+      <span class="pseudonym">Noam</span>
+      <div class="cards"></div>
+      <div class="balance">Solde : <span>1000</span></div>
+    </div>
+    <div class="player" id="bot2">
+      <span class="pseudonym">Léni</span>
+      <div class="cards"></div>
+      <div class="balance">Solde : <span>1000</span></div>
+    </div>
+    <div class="player" id="bot3">
+      <span class="pseudonym">Matias</span>
+      <div class="cards"></div>
+      <div class="balance">Solde : <span>1000</span></div>
+    </div>
+    <div class="player" id="bot4">
+      <span class="pseudonym">Maxence</span>
+      <div class="cards"></div>
+      <div class="balance">Solde : <span>1000</span></div>
+    </div>
+    <div class="player" id="bot5">
+      <span class="pseudonym">Julian</span>
+      <div class="cards"></div>
+      <div class="balance">Solde : <span>1000</span></div>
+    </div>
+    <div class="player" id="user">
+      <span class="pseudonym">Utilisateur</span>
+      <div class="cards"></div>
+      <div class="balance">Solde : <span>1000</span></div>
+    </div>
+
+    <!-- Zone de contrôle pour le joueur humain -->
+    <div id="controls">
+      <div id="action-controls" style="display:none; margin-top:20px;">
+        <label for="bet-slider">Mise : </label>
+        <input type="range" id="bet-slider" min="50" max="500" value="50" step="10">
+        <span id="bet-amount-display">50</span>
+        <br>
+        <button onclick="humanAction('bet')">Miser</button>
+        <button onclick="humanAction('check')">Check</button>
+        <button onclick="humanAction('fold')">Se coucher</button>
+      </div>
+    </div>
+
+    <!-- Zone d'information -->
+    <div id="info">
+      <p id="turn-info">C'est au tour de ...</p>
+    </div>
+  </div>
+
+  <!-- Encadré pour le classement des mains possibles -->
+  <button id="show-hands-btn" onclick="toggleHandsInfo()">Afficher les mains possibles</button>
+  <div id="hands-info" style="display:none;">
+    <h3>Classement des mains</h3>
+    <div class="hand-type">
+      <img src="images/royal_flush.png" alt="Quinte Flush Royale">
+      <span>Quinte Flush Royale</span>
+    </div>
+    <div class="hand-type">
+      <img src="images/straight_flush.png" alt="Quinte Flush">
+      <span>Quinte Flush</span>
+    </div>
+    <div class="hand-type">
+      <img src="images/four_of_a_kind.png" alt="Carré">
+      <span>Carré</span>
+    </div>
+    <div class="hand-type">
+      <img src="images/full_house.png" alt="Full">
+      <span>Full</span>
+    </div>
+    <div class="hand-type">
+      <img src="images/flush.png" alt="Couleur">
+      <span>Couleur</span>
+    </div>
+    <div class="hand-type">
+      <img src="images/straight.png" alt="Suite">
+      <span>Suite</span>
+    </div>
+    <div class="hand-type">
+      <img src="images/three_of_a_kind.png" alt="Brelan">
+      <span>Brelan</span>
+    </div>
+    <div class="hand-type">
+      <img src="images/two_pair.png" alt="Double Paire">
+      <span>Double Paire</span>
+    </div>
+    <div class="hand-type">
+      <img src="images/pair.png" alt="Paire">
+      <span>Paire</span>
+    </div>
+    <div class="hand-type">
+      <img src="images/high_card.png" alt="Carte Haute">
+      <span>Carte Haute</span>
+    </div>
+  </div>
+
+  <!-- Contrôle du volume et lecture de la musique de fond -->
+  <div id="volume-control">
+    <label for="volume-slider">Volume :</label>
+    <input type="range" id="volume-slider" min="0" max="100" value="50">
+  </div>
+  <audio id="bg-music" src="images/bg_music.mp3" loop></audio>
+
+  <script src="main.js"></script>
+</body>
+</html>
