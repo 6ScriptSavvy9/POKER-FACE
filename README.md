@@ -52,9 +52,9 @@ Voici les technologies et ressources utilisées pour développer POKER-FACE :
 
 * **Matias** _alias_ [@6ScriptSavvy9](https://github.com/6ScriptSavvy9)
 * **Noam** _alias_ 
-
+* **Léni** _alias_ 
 Consultez la liste des [contributeurs](https://github.com/6ScriptSavvy9/POKER-FACE/contributors) pour voir toutes les personnes ayant participé au projet.
 
 ## License
 
-Ce projet est sous licence `MIT` - voir le fichier [LICENSE.md](LICENSE.md) pour plus d'informations.
+C'est OpenBar amusez vous
