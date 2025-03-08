@@ -7,9 +7,9 @@ const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'
 
 // Tableau des niveaux de ville
 const cityLevels = [
-  { name: "Deauville", buyIn: 1000 },
-  { name: "Monte Carlo", buyIn: 5000 },
-  { name: "Las Vegas", buyIn: 10000 }
+  { name: "Deauville", buyIn: 10000 },
+  { name: "Monte Carlo", buyIn: 50000 },
+  { name: "Las Vegas", buyIn: 100000 },
 ];
 let currentCityIndex = 0; // Niveau actuel choisi
 
@@ -133,7 +133,6 @@ function initGame() {
   const pseudoInput = document.getElementById("username");
   const userPseudo = pseudoInput.value.trim() || "Joueur";
   
-  // Ordre de jeu souhaité : Matias, Noam, Maxence, Léni, Julian, Utilisateur
   // Nous réorganisons donc le tableau en conséquence.
   players = [
     { id: "bot1", pseudo: "Matias", type: "bot", balance: cityLevels[currentCityIndex].buyIn, cards: [], folded: false },

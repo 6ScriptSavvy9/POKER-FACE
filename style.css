@@ -78,27 +78,30 @@ body {
   background-color: #ffd700;
 }
 
-/* Positionnement des joueurs (positions d'affichage restent inchangées) */
-/* Noam */
+/* Position des joueurs */
+
+/* Matias */
 #bot1 {
   top: 65%;
   left: 25%;
 }
-/* Léni */
+/* Noam */
 #bot2 {
   top: 25%;
-  right: 25%;
+  left: 25%;
 }
-/* Matias */
+
+/* Maxence */
 #bot3 {
   top: 25%;
-  left: 50%;
+  left : 50%;
   transform: translateX(-50%);
 }
-/* Maxence */
+
+/* Léni */
 #bot4 {
   top: 25%;
-  left: 25%;
+  right: 25%;
 }
 /* Julian */
 #bot5 {
