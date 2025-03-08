@@ -16,7 +16,7 @@ body {
 }
 
 #city-selection select {
-  font-size: 18px;
+  font-size: 20px;
   padding: 5px;
 }
 
@@ -27,22 +27,15 @@ body {
   height: 100vh;
 }
 
-/* La table avec décor personnalisé */
-#table {
-  background-image: url('images/table.png');
-  background-size: cover;
-  background-position: center;
-}
-
-/* Affichage du pot au centre de la table */
+/* Affichage du pot */
 #pot-display {
   position: absolute;
-  top: 20px;
+  top: 441px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 20px;
   font-weight: bold;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 5px 10px;
   border-radius: 10px;
   color: #000;
@@ -51,17 +44,17 @@ body {
 /* Affichage des cartes communes */
 #community-cards {
   position: absolute;
-  bottom: 270px;
+  bottom: 650px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 10px;
+  gap: 50px;
 }
 
 /* Style commun pour chaque joueur */
 .player {
   position: absolute;
-  width: 120px;
+  width: 130px;
   text-align: center;
   padding: 5px;
   transition: border 1s;
@@ -69,12 +62,12 @@ body {
 
 /* Contour or pour le joueur actif */
 .player.active {
-  border: 3px solid gold;
+  border: 4px solid gold;
 }
 
 /* Style pour le gagnant (tout en or) */
 .player.winner {
-  border: 3px solid gold;
+  border: 4px solid gold;
   background-color: #ffd700;
 }
 
@@ -93,7 +86,7 @@ body {
 
 /* Maxence */
 #bot3 {
-  top: 25%;
+  top: 20%;
   left : 50%;
   transform: translateX(-50%);
 }
@@ -109,7 +102,7 @@ body {
   right: 25%;
 }
 #user {
-  top: 65%;
+  top: 75%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -118,14 +111,23 @@ body {
 .player .cards {
   margin-top: 5px;
   display: flex;
-  gap: 5px;
+  gap: 15px;
 }
 
-/* Position plus basse du solde */
+/* Position du solde */
 .player .balance {
   margin-top: 10px;
 }
 
+#sprite_table {
+  background-image: url('images/table.png');
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(2); 
+  background-size: cover; 
+  z-index: -1; 
+}
 /* Zone de contrôle à droite */
 #controls {
   position: absolute;
@@ -137,9 +139,9 @@ body {
 
 #controls button {
   display: block;
-  margin: 10px 0;
+  margin: 15px 0;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 17px;
   cursor: pointer;
 }
 
@@ -162,6 +164,7 @@ body {
   width: 50px;
   text-align: center;
   font-weight: bold;
+  transform: scale(1.2); 
 }
 
 /* Bouton et encart pour les mains possibles (en bas à gauche) */

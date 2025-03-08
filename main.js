@@ -9,7 +9,7 @@ const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'
 const cityLevels = [
   { name: "Deauville", buyIn: 10000 },
   { name: "Monte Carlo", buyIn: 50000 },
-  { name: "Las Vegas", buyIn: 100000 },
+  { name: "Las Vegas", buyIn: 10000 }
 ];
 let currentCityIndex = 0; // Niveau actuel choisi
 
