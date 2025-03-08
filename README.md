@@ -48,12 +48,6 @@ Voici les technologies et ressources utilisées pour développer POKER-FACE :
 * [CSS3](https://developer.mozilla.org/fr/docs/Web/CSS) - Pour le design et la mise en page
 * [JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript) - Pour la logique de jeu et les interactions
 
-## Versions
-
-**Dernière version stable :** - 1.6  
-**Dernière version :** - 1.6 
-Liste des versions : [Cliquer pour afficher](https://github.com/6ScriptSavvy9/POKER-FACE/tags)
-
 ## Auteurs
 
 * **6ScriptSavvy9** _alias_ [@6ScriptSavvy9](https://github.com/6ScriptSavvy9)
