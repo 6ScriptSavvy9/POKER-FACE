@@ -72,7 +72,6 @@ body {
 }
 
 /* Position des joueurs */
-
 /* Matias */
 #bot1 {
   top: 65%;
@@ -83,14 +82,12 @@ body {
   top: 25%;
   left: 25%;
 }
-
 /* Maxence */
 #bot3 {
   top: 20%;
-  left : 50%;
+  left: 50%;
   transform: translateX(-50%);
 }
-
 /* Léni */
 #bot4 {
   top: 25%;
@@ -114,20 +111,30 @@ body {
   gap: 15px;
 }
 
-/* Position du solde */
+/* Zone pour afficher la décision */
+.player .decision {
+  font-size: 12px;
+  margin-top: 5px;
+  color: #fff;
+  text-align: center;
+}
+
+/* Zone du solde */
 .player .balance {
   margin-top: 10px;
 }
 
+/* Sprite de la table */
 #sprite_table {
   background-image: url('images/table.png');
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(2); 
-  background-size: cover; 
-  z-index: -1; 
+  transform: translate(-50%, -50%) scale(2);
+  background-size: cover;
+  z-index: -1;
 }
+
 /* Zone de contrôle à droite */
 #controls {
   position: absolute;
@@ -153,6 +160,20 @@ body {
   transform: translateX(-50%);
 }
 
+/* Bouton Retour */
+#back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 8px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+}
+
 /* Style pour les cartes */
 .card {
   display: inline-block;
@@ -164,7 +185,7 @@ body {
   width: 50px;
   text-align: center;
   font-weight: bold;
-  transform: scale(1.2); 
+  transform: scale(1.2);
 }
 
 /* Bouton et encart pour les mains possibles (en bas à gauche) */

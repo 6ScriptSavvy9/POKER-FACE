@@ -41,36 +41,42 @@
     </div>
     <div id="sprite_table"><img src="images/table.png"></div>
 
-    <!-- Joueurs autour de la table (positions restent inchangées) -->
+    <!-- Joueurs autour de la table -->
     <div class="player" id="bot1">
       <span class="pseudonym">Matias</span>
       <div class="cards"></div>
       <div class="balance">Solde : <span>1000</span></div>
+      <div class="decision"></div>
     </div>
     <div class="player" id="bot2">
       <span class="pseudonym">Noam</span>
       <div class="cards"></div>
       <div class="balance">Solde : <span>1000</span></div>
+      <div class="decision"></div>
     </div>
     <div class="player" id="bot3">
       <span class="pseudonym">Maxence</span>
       <div class="cards"></div>
       <div class="balance">Solde : <span>1000</span></div>
+      <div class="decision"></div>
     </div>
     <div class="player" id="bot4">
       <span class="pseudonym">Léni</span>
       <div class="cards"></div>
       <div class="balance">Solde : <span>1000</span></div>
+      <div class="decision"></div>
     </div>
     <div class="player" id="bot5">
       <span class="pseudonym">Julian</span>
       <div class="cards"></div>
       <div class="balance">Solde : <span>1000</span></div>
+      <div class="decision"></div>
     </div>
     <div class="player" id="user">
       <span class="pseudonym">Utilisateur</span>
       <div class="cards"></div>
       <div class="balance">Solde : <span>1000</span></div>
+      <div class="decision"></div>
     </div>
 
     <!-- Zone de contrôle pour le joueur humain -->
@@ -78,7 +84,7 @@
       <div id="action-controls" style="display:none; margin-top:20px;">
         <label for="bet-slider">Mise : </label>
         <input type="range" id="bet-slider" min="50" max="500" value="50" step="10">
-        <span id="bet-amount-display">50</span>
+        <span id="bet-amount-display">50 (x%)</span>
         <br>
         <button onclick="humanAction('bet')">Miser</button>
         <button onclick="humanAction('check')">Check</button>
@@ -90,6 +96,9 @@
     <div id="info">
       <p id="turn-info">C'est au tour de ...</p>
     </div>
+    
+    <!-- Bouton Retour -->
+    <button id="back-button" onclick="backToCitySelection()">Retour</button>
   </div>
 
   <!-- Encadré pour le classement des mains possibles -->
@@ -138,7 +147,7 @@
     </div>
   </div>
 
-  <!-- Contrôle du volume et lecture de la musique de fond -->
+  <!-- Contrôle du volume et musique de fond -->
   <div id="volume-control">
     <label for="volume-slider">Volume :</label>
     <input type="range" id="volume-slider" min="0" max="100" value="50">
