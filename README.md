@@ -57,4 +57,4 @@ Consultez la liste des [contributeurs](https://github.com/6ScriptSavvy9/POKER-FA
 
 ## License
 
-C'est OpenBar amusez vous
+Ce projet est sous licence exemple: MIT - voir le fichier LICENSE.md pour plus d'informations
