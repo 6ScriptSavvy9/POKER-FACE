@@ -1,6 +1,6 @@
 # POKER-FACE  
 
-POKER-FACE est un jeu de Poker Texas Hold'em développé en HTML, CSS et JavaScript. Plongez dans l'ambiance d'un tournoi de poker où vous affrontez des adversaires bots dans une interface immersive et ludique.  
+POKER-FACE est un jeu de Poker Texas Hold'em développé en HTML, CSS et JavaScript. Ceci est projet de NSI, et monsieur vous allez vous kiffer.  
 *Note : Le projet est encore en développement et de nombreuses améliorations sont à venir.*
 
 ## Pour commencer
