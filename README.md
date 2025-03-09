@@ -57,4 +57,4 @@ Consultez la liste des [contributeurs](https://github.com/6ScriptSavvy9/POKER-FA
 
 ## License
 
-Ce projet est sous licence ``exemple: MIT`` - voir le fichier [LICENSE.md](LICENSE.md) pour plus d'informations
+Ce projet est sous licence ``exemple: MIT`` - voir le fichier [LICENSE.txt](LICENSE.txt) pour plus d'informations
