@@ -1,6 +1,6 @@
 # POKER-FACE  
 
-POKER-FACE est un jeu de Poker Texas Hold'em développé en HTML, CSS et JavaScript. Ceci est projet de NSI, et monsieur vous allez vous kiffer.  
+POKER-FACE est un jeu de Poker Texas Hold'em développé en HTML, CSS et JavaScript par trois petit génies.
 *Note : Le projet est encore en développement et de nombreuses améliorations sont à venir.*
 
 ## Pour commencer
@@ -26,17 +26,20 @@ Suivez les étapes ci-dessous pour installer et lancer le projet :
    ```bash
    cd POKER-FACE
    ```
-3. **Lancez le jeu**  
+3. **Lancez le jeu**
+
+Décompresser le fichier, mettez le alaise, puis : 
+
    Ouvrez le fichier `index.html` dans votre navigateur web (par double-clic ou via "Ouvrir avec").
 
-Vous verrez alors l'écran d'accueil du jeu, suivi d'une sélection de ville et de l'interface de jeu.
+Vous verrez alors l'écran d'accueil du jeu, suivi d'une sélection de ville et de l'interface de jeu et des effets sonores dignes d'un qualité studio.
 
 ## Démarrage
 
 Pour démarrer votre projet :
 
 - Ouvrez le fichier `index.html` dans votre navigateur.
-- Sélectionnez la ville qui détermine le niveau de buy-in.
+- Sélectionnez la ville.
 - Entrez votre pseudonyme et commencez à jouer.
 - Testez les différentes phases du jeu (préflop, flop, turn, river) et les mécanismes de mises et d'actions des bots.
 
