@@ -12,9 +12,9 @@ const cardValueMap = {
 
 // Tableau des niveaux de ville
 const cityLevels = [
-  { name: "Deauville", buyIn: 10000 },
-  { name: "Monte Carlo", buyIn: 50000 },
-  { name: "Las Vegas", buyIn: 10000 }
+  { name: "Deauville", buyIn: 1000 },
+  { name: "Monte Carlo", buyIn: 10000 },
+  { name: "Las Vegas", buyIn: 100000 },
 ];
 let currentCityIndex = 0; // Niveau actuel choisi
 
@@ -29,14 +29,12 @@ let currentPhase = "preflop";  // "preflop", "flop", "turn", "river"
 let roundStartIndex = 0;
 let lastAggressiveIndex = 0;
 
-// --------------------------
-// Fonctions de navigation
-// --------------------------
+// Fonction pour démarrer le jeu
 function goToCitySelection() {
   document.getElementById("start-screen").style.display = "none";
   document.getElementById("city-selection").style.display = "block";
 }
-
+// Fonction pour choisir une ville et démarrer le jeu
 function goToLogin() {
   const select = document.getElementById("city-select");
   currentCityIndex = parseInt(select.value);
@@ -46,15 +44,11 @@ function goToLogin() {
 
 // Bouton Retour pour changer de ville
 function backToCitySelection() {
-  // On arrête la partie et on retourne à la sélection de ville
   document.getElementById("game-container").style.display = "none";
   document.getElementById("city-selection").style.display = "block";
-  // (Optionnel : stopper la musique ou réinitialiser l'état du jeu)
 }
 
-// --------------------------
-// Fonctions du deck et affichage
-// --------------------------
+// Fonction deck de cartes
 function createDeck() {
   let deck = [];
   for (let suit of suits) {
@@ -65,6 +59,7 @@ function createDeck() {
   return deck;
 }
 
+// Fonction pour mélanger le deck
 function shuffleDeck(deck) {
   for (let i = deck.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
@@ -73,10 +68,12 @@ function shuffleDeck(deck) {
   return deck;
 }
 
+// Mise à jour de l'affichage du pot et des soldes des joueurs
 function updatePotDisplay() {
   document.getElementById("pot-display").textContent = "Pot : " + pot;
 }
 
+// Permet de gérer l'affichage des cartes des joueurs
 function updatePlayerBalanceDisplay(player) {
   const playerDiv = document.getElementById(player.id);
   if (playerDiv) {
@@ -84,6 +81,7 @@ function updatePlayerBalanceDisplay(player) {
   }
 }
 
+// Permet de gérer l'affichage des actions des joueurs (mise, check, fold)
 function updatePlayerDecision(player) {
   const playerDiv = document.getElementById(player.id);
   const decisionDiv = playerDiv.querySelector(".decision");
@@ -92,6 +90,7 @@ function updatePlayerDecision(player) {
   }
 }
 
+// Fonction pour afficher les cartes des joueurs (ou les cacher)
 function displayPlayerCards(player) {
   const playerDiv = document.getElementById(player.id);
   const cardsContainer = playerDiv.querySelector(".cards");
@@ -105,17 +104,8 @@ function displayPlayerCards(player) {
       cardElem.textContent = `${card.value} ${card.suit}`;
       cardsContainer.appendChild(cardElem);
     });
+    // On cache le bord pour les cartes révélées
     cardsContainer.style.border = "none";
-  } else if (player.folded) {
-    // Si le joueur s'est couché, on affiche un cadre rouge et le message "Folded"
-    cardsContainer.style.border = "2px solid red";
-    let foldedMsg = document.createElement("div");
-    foldedMsg.textContent = "Folded";
-    foldedMsg.style.color = "red";
-    foldedMsg.style.fontWeight = "bold";
-    foldedMsg.style.fontSize = "14px";
-    foldedMsg.style.textAlign = "center";
-    cardsContainer.appendChild(foldedMsg);
   } else if (player.type === "bot") {
     // Pour les IA actives, masquer les cartes
     player.cards.forEach(card => {
@@ -137,7 +127,7 @@ function displayPlayerCards(player) {
     cardsContainer.style.border = "none";
   }
 }
-
+// Fonction pour afficher les cartes communes
 function displayCommunityCards() {
   const communityDiv = document.getElementById("community-cards");
   communityDiv.innerHTML = "";
@@ -149,6 +139,7 @@ function displayCommunityCards() {
   });
 }
 
+// Fonctions pour gérer les tours de jeu
 function updateTurnInfo() {
   const info = document.getElementById("turn-info");
   players.forEach(p => {
@@ -162,14 +153,16 @@ function updateTurnInfo() {
   if (currentPlayer.folded) {
     info.textContent = `${currentPlayer.pseudo} est couché.`;
   } else {
-    info.textContent = `C'est au tour de ${currentPlayer.pseudo} (${currentPlayer.type})`;
+    info.textContent = `C'est KIKI qui joue ${currentPlayer.pseudo} (${currentPlayer.type})`;
   }
 }
 
+// Fonction pour compter le nombre de joueurs actifs
 function activePlayersCount() {
   return players.filter(p => !p.folded).length;
 }
 
+// Fonction pour déterminer l'index du prochain joueur actif
 function getNextActivePlayerIndex(current) {
   let next = (current + 1) % players.length;
   while (players[next].folded) {
@@ -195,16 +188,17 @@ function getAIBetAmount(player) {
   }
   
   // Déterminer un pourcentage en fonction de la force de la main
-  let percentage = 0.05; // Valeur par défaut (5%)
-  if (handEval.rank >= 8) {
-    percentage = 0.2; // Très forte main → 20%
-  } else if (handEval.rank >= 6) {
-    percentage = 0.15;
-  } else if (handEval.rank >= 4) {
-    percentage = 0.1;
+  let percentage = 0.10; // Valeur par défaut (10%)
+  if (handEval.rank >= 6) {
+    percentage = 0.5; // Très forte main → 50%
+  } else if (handEval.rank >= 3) {
+    percentage = 0.3; // Bonne main → 30%
+  } else if (handEval.rank >= 1) {
+    percentage = 0.15; // Main correcte → 15%
   }
+  // Calcul de la mise en fonction du pourcentage et du solde
   let bet = Math.floor(player.balance * percentage);
-  bet = Math.max(50, Math.min(bet, 10000, player.balance));
+  bet = Math.max(100, Math.min(bet, 100000, player.balance));
   return bet;
 }
 
@@ -217,6 +211,7 @@ function initGame() {
   const pseudoInput = document.getElementById("username");
   const userPseudo = pseudoInput.value.trim() || "Joueur";
   
+  // Définition des joueurs
   players = [
     { id: "bot1", pseudo: "Matias", type: "bot", balance: cityLevels[currentCityIndex].buyIn, cards: [], folded: false },
     { id: "bot2", pseudo: "Noam", type: "bot", balance: cityLevels[currentCityIndex].buyIn, cards: [], folded: false },
@@ -226,6 +221,7 @@ function initGame() {
     { id: "user", pseudo: userPseudo, type: "human", balance: cityLevels[currentCityIndex].buyIn, cards: [], folded: false }
   ];
 
+  // Mise à jour de l'affichage des joueurs
   players.forEach(player => {
     const playerDiv = document.getElementById(player.id);
     if (playerDiv) {
@@ -246,12 +242,11 @@ function initGame() {
     }
   });
   
+  // Affichage de l'interface de jeu
   document.getElementById("login").style.display = "none";
   document.getElementById("start-screen").style.display = "none";
   document.getElementById("city-selection").style.display = "none";
   document.getElementById("game-container").style.display = "block";
-
-  document.getElementById("table").style.backgroundImage = "url('images/decors_poker1.png')";
 
   const bgMusic = document.getElementById("bg-music");
   bgMusic.volume = document.getElementById("volume-slider").value / 100;
@@ -267,11 +262,12 @@ function initGame() {
     displayPlayerCards(player);
   });
 
-  // Pour le joueur humain, adapter le max du slider à son solde (maximum 500)
+  // Pour le joueur humain, adapter le max
   const userPlayer = players.find(p => p.type === "human");
   const betSlider = document.getElementById("bet-slider");
   betSlider.max = Math.min(100000, userPlayer.balance);
 
+  // Initialisation du premier tour
   currentPhase = "preflop";
   currentPlayerIndex = players.findIndex(p => !p.folded);
   roundStartIndex = currentPlayerIndex;
@@ -291,9 +287,7 @@ function initGame() {
   });
 }
 
-// --------------------------
-// Gestion des tours de jeu
-// --------------------------
+// Gestion des différents tours de jeu
 function processTurn() {
   // Si un seul joueur est actif, on déclenche directement le showdown
   if (activePlayersCount() === 1) {
@@ -310,6 +304,7 @@ function processTurn() {
   updateTurnInfo();
   const currentPlayer = players[currentPlayerIndex];
   
+  // Si c'est un bot, on déclenche son tour automatiquement
   if (currentPlayer.type === "bot") {
     setTimeout(() => {
       const actions = ['bet', 'check', 'fold'];
@@ -347,6 +342,7 @@ function processTurn() {
   }
 }
 
+// Fonction pour gérer les actions du joueur humain
 function humanAction(action) {
   const currentPlayer = players[currentPlayerIndex];
   const betSlider = document.getElementById("bet-slider");
@@ -396,6 +392,7 @@ function nextTurn() {
   processTurn();
 }
 
+// Fonction pour avancer à la phase suivante (flop, turn, river)
 function advancePhase() {
   if (currentPhase === "preflop") {
     let flop = gameState.deck.splice(0, 3);
@@ -423,21 +420,20 @@ function advancePhase() {
   processTurn();
 }
 
-// --------------------------
-// Showdown : révélation et évaluation des mains
-// --------------------------
+// Fonction pour déclencher le showdown et déterminer le gagnant
 function showdown() {
   revealAllCards = true;
   players.forEach(player => {
     displayPlayerCards(player);
   });
   const activePlayers = players.filter(p => !p.folded);
-  // Si tous se sont couchés, le dernier à ne pas avoir foldé gagne
+  // Si tous se sont couchés, le dernier à ne pas avoir foldé gagne LA MANCHE eT NON PAS LA MER
   if (activePlayers.length === 0) {
     // On récupère le dernier joueur ayant joué (par exemple, celui juste avant le prochain indice)
     let lastPlayer = players[(currentPlayerIndex - 1 + players.length) % players.length];
     activePlayers.push(lastPlayer);
   }
+  // On évalue les mains de chaque joueur
   let bestHand = null;
   let winner = null;
   activePlayers.forEach(player => {
@@ -448,7 +444,7 @@ function showdown() {
       winner = player;
     }
   });
-  
+  // On détermine le gagnant et on lui attribue le pot
   winner.balance += pot;
   updatePlayerBalanceDisplay(winner);
   const winnerDiv = document.getElementById(winner.id);
@@ -458,20 +454,14 @@ function showdown() {
   alert(`${winner.pseudo} remporte le pot de ${pot} avec ${winner.bestHand.name} !`);
   pot = 0;
   updatePotDisplay();
-  
+  // On affiche la main de l'utilisateur
   const userPlayer = players.find(p => p.type === "human");
   if (userPlayer && !userPlayer.folded) {
     const userHandEval = getBestHand(userPlayer.cards, gameState.communityCards);
     alert(`Votre main : ${userHandEval.name}`);
   }
   
-  if (currentCityIndex < cityLevels.length - 1 && userPlayer.balance >= cityLevels[currentCityIndex + 1].buyIn) {
-    if (confirm(`Félicitations ! Vous pouvez passer à ${cityLevels[currentCityIndex + 1].name}. Voulez-vous le faire ?`)) {
-      currentCityIndex++;
-      alert(`Vous passez à ${cityLevels[currentCityIndex].name}.`);
-    }
-  }
-  
+  // On vérifie si le joueur veut continuer
   if (promptEquation()) {
     newHand();
   } else {
@@ -479,6 +469,7 @@ function showdown() {
   }
 }
 
+// On demande une équation pour continuer
 function promptEquation() {
   const a = Math.floor(Math.random() * 10) + 1;
   const b = Math.floor(Math.random() * 10) + 1;
@@ -486,6 +477,7 @@ function promptEquation() {
   return parseInt(reponse) === a + b;
 }
 
+// Attribution du pot au gagnant et démarrage d'une nouvelle main
 function newHand() {
   revealAllCards = false;
   gameState.deck = shuffleDeck(createDeck());
@@ -588,7 +580,7 @@ function evaluate5CardHand(hand) {
   }
   return { rank: 1, name: "Carte Haute", tiebreakers: cardNums };
 }
-
+// Fonction pour évaluer la meilleure main parmi 5 cartes
 function getBestHand(handCards, communityCards) {
   let allCards = handCards.concat(communityCards);
   let comb = combinations(allCards, 5);
@@ -601,7 +593,7 @@ function getBestHand(handCards, communityCards) {
   });
   return bestEval;
 }
-
+// Fonction pour comparer deux mains et déterminer laquelle est la plus forte
 function compareHands(handA, handB) {
   if (handA.rank > handB.rank) return 1;
   if (handA.rank < handB.rank) return -1;
@@ -610,15 +602,4 @@ function compareHands(handA, handB) {
     if (handA.tiebreakers[i] < handB.tiebreakers[i]) return -1;
   }
   return 0;
-}
-
-function toggleHandsInfo() {
-  const handsInfo = document.getElementById("hands-info");
-  if (handsInfo.style.display === "none" || handsInfo.style.display === "") {
-    handsInfo.style.display = "block";
-    document.getElementById("show-hands-btn").textContent = "Masquer les mains possibles";
-  } else {
-    handsInfo.style.display = "none";
-    document.getElementById("show-hands-btn").textContent = "Afficher les mains possibles";
-  }
 }
