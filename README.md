@@ -1,6 +1,6 @@
 # POKER-FACE  
 
-POKER-FACE est un jeu de Poker Texas Hold'em développé en HTML, CSS et JavaScript. Plongez dans l'ambiance d'un tournoi de poker où vous affrontez des adversaires bots dans une interface immersive et ludique.  
+POKER-FACE est un jeu de Poker Texas Hold'em développé en HTML, CSS et JavaScript par trois petit génies.
 *Note : Le projet est encore en développement et de nombreuses améliorations sont à venir.*
 
 ## Pour commencer
@@ -26,17 +26,20 @@ Suivez les étapes ci-dessous pour installer et lancer le projet :
    ```bash
    cd POKER-FACE
    ```
-3. **Lancez le jeu**  
+3. **Lancez le jeu**
+
+Décompresser le fichier, mettez le alaise, puis : 
+
    Ouvrez le fichier `index.html` dans votre navigateur web (par double-clic ou via "Ouvrir avec").
 
-Vous verrez alors l'écran d'accueil du jeu, suivi d'une sélection de ville et de l'interface de jeu.
+Vous verrez alors l'écran d'accueil du jeu, suivi d'une sélection de ville et de l'interface de jeu et des effets sonores dignes d'un qualité studio.
 
 ## Démarrage
 
 Pour démarrer votre projet :
 
 - Ouvrez le fichier `index.html` dans votre navigateur.
-- Sélectionnez la ville qui détermine le niveau de buy-in.
+- Sélectionnez la ville.
 - Entrez votre pseudonyme et commencez à jouer.
 - Testez les différentes phases du jeu (préflop, flop, turn, river) et les mécanismes de mises et d'actions des bots.
 
@@ -52,8 +55,7 @@ Voici les technologies et ressources utilisées pour développer POKER-FACE :
 
 * **Matias** _alias_ [@6ScriptSavvy9](https://github.com/6ScriptSavvy9)
 * **Noam** _alias_ [@GaeboraKaepora](https://github.com/GaeboraKaepora)
-* **Léni** _alias_ 
-Consultez la liste des [contributeurs](https://github.com/6ScriptSavvy9/POKER-FACE/contributors) pour voir toutes les personnes ayant participé au projet.
+* **Léni** _alias_ [@Shibouli](https://github.com/Shibouli))
 
 ## License
 
