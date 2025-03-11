@@ -55,7 +55,7 @@ Voici les technologies et ressources utilisées pour développer POKER-FACE :
 
 * **Matias** _alias_ [@6ScriptSavvy9](https://github.com/6ScriptSavvy9)
 * **Noam** _alias_ [@GaeboraKaepora](https://github.com/GaeboraKaepora)
-* **Léni** _alias_ [@Shibouli](https://github.com/Shibouli))
+* **Léni** _alias_ [@Shibouli](https://github.com/Shibouli)
 
 ## License
 
