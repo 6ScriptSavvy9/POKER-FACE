@@ -248,10 +248,18 @@ function initGame() {
   document.getElementById("city-selection").style.display = "none";
   document.getElementById("game-container").style.display = "block";
 
-  const bgMusic = document.getElementById("bg-music");
-  bgMusic.volume = document.getElementById("volume-slider").value / 100;
-  bgMusic.play();
-
+  document.addEventListener("DOMContentLoaded", function(){
+    const musicSelect = document.getElementById("music-select");
+    if(musicSelect) {
+      musicSelect.addEventListener("change", function(){
+        const bgMusic = document.getElementById("bg-music");
+        bgMusic.src = musicSelect.value;
+        bgMusic.load();
+        bgMusic.play();
+      });
+    }
+  });
+  
   gameState.deck = shuffleDeck(createDeck());
   gameState.communityCards = [];
   pot = 0;

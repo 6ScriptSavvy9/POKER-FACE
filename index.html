@@ -145,26 +145,9 @@
       <img src="images/high_card.png" alt="Carte Haute">
       <span>Carte Haute</span>
     </div>
-  </div>
 
-  <!-- Contrôle du volume et musique de fond -->
-  <div id="volume-control">
-    <label for="volume-slider">Volume :</label>
-    <input type="range" id="volume-slider" min="0" max="100" value="50">
-  </div>
-
-  <!-- Sélection de la musique -->
-  <div id="music-selection">
-    <label for="music-select">Musique :</label>
-    <select id="music-select" onchange="changeMusic()">
-      <option value="images/bg_music.mp3">Musique 1</option>
-      <option value="images/bg_music2.mp3">Musique 2</option>
-      <option value="images/bg_music3.mp3">Musique 3</option>
-    </select>
-  </div>
-
-  <audio id="bg-music" src="images/bg_music.mp3" loop></audio>
-  
+<!-- Lecteur audio pour la musique de fond en boucle -->
+<audio id="bg-music" src="images/léni_roi_du_quantum.mp3" loop autoplay></audio>
 
   <script src="main.js"></script>
 </body>
