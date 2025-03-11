@@ -225,7 +225,14 @@ body {
   position: fixed;
   top: 20px;
   right: 20px;
-  background-color: rgba(7, 6, 6, 0.486);
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 5px 10px;
   border-radius: 5px;
+  color: #fff;
 }
+
+#volume-slider {
+  width: 100px;
+}
+
+/* ...existing code... */

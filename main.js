@@ -611,3 +611,18 @@ function compareHands(handA, handB) {
   }
   return 0;
 }
+
+function toggleHandsInfo() {
+  const handsInfo = document.getElementById('hands-info');
+  if (handsInfo.style.display === 'none' || handsInfo.style.display === '') {
+    handsInfo.style.display = 'block';
+  } else {
+    handsInfo.style.display = 'none';
+  }
+}
+
+function changeVolume() {
+  const volumeSlider = document.getElementById('volume-slider');
+  const bgMusic = document.getElementById('bg-music');
+  bgMusic.volume = volumeSlider.value / 100;
+}

@@ -101,6 +101,12 @@
     <button id="back-button" onclick="backToCitySelection()">Retour</button>
   </div>
 
+    <!-- Contrôle du volume -->
+  <div id="volume-control">
+    <label for="volume-slider">Volume :</label>
+    <input type="range" id="volume-slider" min="0" max="100" value="50" onchange="changeVolume()">
+  </div>
+
   <!-- Encadré pour le classement des mains possibles -->
   <button id="show-hands-btn" onclick="toggleHandsInfo()">Afficher les mains possibles</button>
   <div id="hands-info" style="display:none;">
@@ -145,6 +151,7 @@
       <img src="images/high_card.png" alt="Carte Haute">
       <span>Carte Haute</span>
     </div>
+
 
 <!-- Lecteur audio pour la musique de fond en boucle -->
 <audio id="bg-music" src="images/léni_roi_du_quantum.mp3" loop autoplay></audio>
