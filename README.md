@@ -7,6 +7,10 @@ POKER-FACE est un jeu de Poker Texas Hold'em développé en HTML, CSS et JavaScr
 
 Ce guide vous explique comment lancer et tester le jeu en local sur votre navigateur.
 
+## Bug Rencontrés
+
+Voir fichier refléxif
+
 ### Pré-requis
 
 Pour débuter avec POKER-FACE, vous aurez besoin de :
