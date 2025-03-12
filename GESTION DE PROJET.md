@@ -193,7 +193,7 @@ Voici cinq exemples de tests réalisés avec l’instruction `assert` pour véri
 **Contenu proposé pour le fichier README.txt :**
 
 ```
-Voir : https://github.com/6ScriptSavvy9/POKER-FACE/blob/main/README.md
+https://github.com/6ScriptSavvy9/POKER-FACE/blob/main/README.md
 ```
 
 ---
