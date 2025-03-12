@@ -2,20 +2,34 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+Security updates are provided only for the officially supported versions of POKER-FACE.  
+To ensure stability and security, only the versions listed below will receive patches in the event of a vulnerability.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| 1.6.x   | :white_check_mark: |
+| 1.5.x   | :white_check_mark: |
+| 1.4.x   | :white_check_mark: |
+| 1.3.x   | :white_check_mark: |
+| 1.2.x   | :white_check_mark: |
+| > 1.1   | :x:                |
+
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+We appreciate your efforts to improve the security of POKER-FACE. If you discover a vulnerability, please follow the steps below:
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+1. **Report the Vulnerability**  
+   - Open an issue on [our GitHub repository](https://github.com/6ScriptSavvy9/POKER-FACE/issues) and add the **security** label.  
+
+2. **Acknowledgment**  
+   - You will receive an acknowledgment within 48 business hours after we receive your report.
+
+3. **Evaluation Process**  
+   - Our security team will assess the impact of the reported vulnerability.  
+   - If the issue is confirmed, we will keep you informed about the corrective actions and the schedule for a patch release.
+
+4. **Responsible Disclosure**  
+   - We are committed to responsible disclosure. Therefore, we ask that you do not publicly share the details of the vulnerability until we have issued an official patch.
+
+Thank you for your vigilance and for helping us keep POKER-FACE secure.
