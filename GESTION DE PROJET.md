@@ -2,7 +2,7 @@
 
 ### Exercice 1.1 – Contexte du projet  
 **Pourquoi ce projet est réalisé et dans quel but ?**  
-Le projet fraichement nommée POKER-FACE est réalisé dans le cadre du cours de NSI afin de mettre en pratique les notions de gestion de projet et de développement web. Le but est de créer un jeu de Poker avec les règles du Poker Texas Hold'em, permettant à un joueur de découvrir la stratégie et les règles du Poker, tout en développant des compétences en HTML, CSS et JavaScript.  
+Le projet nommée POKER-FACE est réalisé dans le cadre du cours de NSI afin de mettre en pratique les notions de gestion de projet et de développement web. Le but est de créer un jeu de Poker avec les règles du Poker Texas Hold'em, permettant à un joueur de découvrir la stratégie et les règles du Poker, tout en développant des compétences en HTML, CSS et JavaScript.  
   
 ### Exercice 1.2 – Objet  
 **Définition brève du projet :**  
@@ -11,7 +11,9 @@ POKER-FACE est une application web (jeu) qui simule une partie de Poker. L’uti
 ### Exercice 1.3 – Organisation  
 **Choix du rôle :**  
 Pour ce projet, c'est Léni qui assure le rôle de **Chef de projet**. (C'est dailleurs pour ça qu'on a pas fini),
-Noam est le **Maitre du temps**
+
+Noam est le **Maitre du temps**,
+
 Et Matias le **Contrôleur de qualité**
 
 ### Exercice 1.4 – Environnement  
