@@ -24,7 +24,7 @@ We appreciate your efforts to improve the security of POKER-FACE. If you discove
 
 2. **Acknowledgment**  
    - You will receive an acknowledgment within 48 business hours after we receive your report.
-   - - **OR** email us directly at [your-email@example.com](matiasgoncalves78@gmail.com).
+   - - **OR** email us directly at [matiasgoncalves78@gmail.com](matiasgoncalves78@gmail.com).
 
 3. **Evaluation Process**  
    - Our security team will assess the impact of the reported vulnerability.  
