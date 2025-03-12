@@ -190,7 +190,7 @@ Voici cinq exemples de tests réalisés avec l’instruction `assert` pour véri
    ```
 
 #### Exercice 3.2 – README  
-**Contenu proposé pour le fichier README.txt :**
+**Contenu proposé pour le fichier README.md :**
 
 ```
 https://github.com/6ScriptSavvy9/POKER-FACE/blob/main/README.md
