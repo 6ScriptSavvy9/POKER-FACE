@@ -30,7 +30,7 @@ body {
 /* Affichage du pot */
 #pot-display {
   position: absolute;
-  top: 441px;
+  top: 400px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 20px;
@@ -44,7 +44,7 @@ body {
 /* Affichage des cartes communes */
 #community-cards {
   position: absolute;
-  bottom: 650px;
+  bottom: 450px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -235,4 +235,3 @@ body {
   width: 100px;
 }
 
-/* ...existing code... */
