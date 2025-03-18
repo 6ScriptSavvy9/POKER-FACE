@@ -247,18 +247,6 @@ function initGame() {
   document.getElementById("start-screen").style.display = "none";
   document.getElementById("city-selection").style.display = "none";
   document.getElementById("game-container").style.display = "block";
-
-  document.addEventListener("DOMContentLoaded", function(){
-    const musicSelect = document.getElementById("music-select");
-    if(musicSelect) {
-      musicSelect.addEventListener("change", function(){
-        const bgMusic = document.getElementById("bg-music");
-        bgMusic.src = musicSelect.value;
-        bgMusic.load();
-        bgMusic.play();
-      });
-    }
-  });
   
   gameState.deck = shuffleDeck(createDeck());
   gameState.communityCards = [];
