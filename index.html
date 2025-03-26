@@ -151,11 +151,18 @@
       <img src="images/high_card.png" alt="Carte Haute">
       <span>Carte Haute</span>
     </div>
-
+  </div>
 
 <!-- Lecteur audio pour la musique de fond en boucle -->
 <audio id="bg-music" src="images/léni_roi_du_quantum.mp3" loop autoplay></audio>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var bgMusic = document.getElementById('bg-music');
+      bgMusic.volume = 0.5; // Set initial volume to 50%
+      bgMusic.play();
+    });
+  </script>
   <script src="main.js"></script>
 </body>
 </html>
